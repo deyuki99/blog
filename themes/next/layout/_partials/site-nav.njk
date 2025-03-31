@@ -1,0 +1,25 @@
+{% import 'header/menu-item.njk' as menu_item with context %}
+
+{%- if theme.menu or theme.algolia_search.enable or theme.local_search.enable %}
+<nav class="site-nav">
+  <ul class="main-menu menu">
+    {%- for name, value in theme.menu %}
+      {%- set respath = value.split('||')[0] | trim %}
+      {%- set icon = value.split('||')[1] | trim %}
+      {{ menu_item.render({
+        name: name,
+        path: respath,
+        icon: icon
+      }) | safe }}
+    {%- endfor %}
+
+    {%- if theme.algolia_search.enable or theme.local_search.enable %}
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+          {%- if theme.menu_settings.icons %}<i class="fa fa-search fa-fw"></i>{% endif %}{{ __('menu.search') }}
+        </a>
+      </li>
+    {%- endif %}
+  </ul>
+</nav>
+{%- endif %}

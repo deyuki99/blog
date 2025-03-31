@@ -1,0 +1,689 @@
+/* 全局背景设置 */
+body {
+  background: url('/images/bg.jpg') fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* 主题色设置 */
+:root {
+  --theme-color-blue: #4a90e2;  /* 中性蓝 */
+  --theme-color-pink: #ffb6c1;  /* 柔和粉 */
+}
+
+/* 重新设计的 header 样式 */
+.header {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  background: transparent;
+  max-width: 1200px;
+}
+
+.site-brand-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.site-nav {
+  padding: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main-menu.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 12px;
+  max-width: 1200px;
+  list-style: none;
+}
+
+.main-menu.menu .menu-item {
+  text-align: center;
+  margin: 0;
+  position: relative;
+}
+
+.main-menu.menu .menu-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--theme-color-blue);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.main-menu.menu .menu-item:hover::after,
+.main-menu.menu .menu-item-active::after {
+  width: 70%;
+}
+
+.main-menu.menu .menu-item a {
+  display: inline-block;
+  padding: 6px 16px;
+  color: #333;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  background: transparent;
+  position: relative;
+  text-decoration: none;
+}
+
+.main-menu.menu .menu-item a:hover {
+  color: var(--theme-color-blue);
+}
+
+.main-menu.menu .menu-item-active a {
+  color: var(--theme-color-blue);
+  font-weight: 500;
+}
+
+.site-nav {
+  padding: 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.main-menu.menu .menu-item-search {
+  margin: 0;
+}
+
+.main-menu.menu .menu-item-search a {
+  display: inline-block;
+  padding: 8px 15px;
+  color: #333;
+  font-size: 0.95em;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.main-menu.menu .menu-item-search a:hover {
+  color: var(--theme-color-blue);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+  .main-menu.menu {
+    flex-direction: column;
+    padding: 10px 5px;
+    gap: 5px;
+  }
+
+  .main-menu.menu .menu-item {
+    width: 100%;
+  }
+
+  .main-menu.menu .menu-item a {
+    width: 100%;
+    padding: 8px 15px;
+    display: block;
+    text-align: center;
+  }
+
+  .main-menu.menu .menu-item::after {
+    display: none;
+  }
+
+  .main-menu.menu .menu-item:hover a,
+  .main-menu.menu .menu-item-active a {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--theme-color-blue);
+  }
+
+  .site-nav {
+    padding: 5px 0;
+  }
+}
+
+.site-nav {
+  margin: 0;
+  padding: 10px 20px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 重新设计的导航菜单样式 */
+.site-nav {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu.menu {
+  margin: 0 auto;
+  padding: 10px;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 将空间分为两等份 */
+  gap: 10px;
+  list-style: none;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.main-menu.menu .menu-item {
+  grid-column: 1;  /* 所有菜单项放在左列 */
+  text-align: right;
+  padding-right: 20px;
+  margin: 0;
+}
+
+.main-menu.menu .menu-item a {
+  display: inline-block;
+  padding: 8px 15px;
+  color: #333;
+  font-size: 0.95em;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.main-menu.menu .menu-item a:hover {
+  color: var(--theme-color-blue);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-menu.menu .menu-item-active a {
+  color: var(--theme-color-blue);
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-menu.menu .menu-item-search {
+  grid-column: 1;  /* 搜索按钮也放在左列 */
+}
+
+/* 移动端适配 */
+@media (max-width: 767px) {
+  .main-menu.menu {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+
+  .main-menu.menu .menu-item {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .main-menu.menu .menu-item a {
+    width: 100%;
+    padding: 10px 15px;
+  }
+}
+
+/* 将菜单项容器放在左侧 */
+.main-menu.menu .menu-item {
+  grid-column: 1;  /* 指定在第一列 */
+  display: block;
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* 搜索按钮也放在左侧 */
+.main-menu.menu .menu-item-search {
+  grid-column: 1;
+}
+
+.main-menu.menu .menu-item a {
+  padding: 10px 25px;
+  font-size: 1.1em;
+  color: #333;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+.main-menu.menu .menu-item a:hover {
+  color: var(--theme-color-blue);
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
+}
+
+.main-menu.menu .menu-item-active a {
+  color: var(--theme-color-blue);
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+/* 菜单项悬停效果 */
+.main-menu.menu .menu-item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--theme-color-blue);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+.main-menu.menu .menu-item a:hover::after {
+  width: 70%;
+}
+
+.main-menu.menu .menu-item-active a::after {
+  width: 70%;
+}
+
+/* 全局背景透明和模糊效果 */
+.main-inner,
+.footer-inner,
+.sidebar-inner,
+.post-block,
+.comments,
+.pagination,
+.post-navigation-top,
+.sub-menu,
+.site-nav,
+.site-nav-toggle,
+.site-meta,
+.menu-item-active a,
+.posts-expand .post-header,
+.post-button .btn,
+.pagination .prev, 
+.pagination .next, 
+.pagination .page-number,
+.comments,
+.sidebar-toggle,
+.back-to-top,
+.reading-progress-bar {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 站点标题颜色修改 */
+.site-title {
+  color: var(--theme-color-blue);
+}
+
+.site-subtitle {
+  color: #000;
+}
+
+a {
+  color: var(--theme-color-blue);
+}
+
+a:hover {
+  color: var(--theme-color-pink);
+}
+
+.btn {
+  background: var(--theme-color-blue);
+  color: #fff;
+}
+
+.btn:hover {
+  background: var(--theme-color-pink);
+}
+
+/* 移动端适配 */
+@media (max-width: 767px) {
+  .header-inner {
+    padding: 10px;
+  }
+
+  .main-menu.menu {
+    grid-template-columns: 1fr;  /* 移动端使用单列布局 */
+    padding: 5px;
+    gap: 8px;
+    margin: 10px auto;
+  }
+
+  .main-menu.menu .menu-item,
+  .main-menu.menu .menu-item-search {
+    grid-column: auto;  /* 重置列设置 */
+    width: 100%;
+    margin: 0;
+  }
+
+  .main-menu.menu .menu-item a {
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .main-menu.menu .menu-item a:hover {
+    transform: translateY(0);
+  }
+}
+
+/* 导航栏容器样式 */
+.site-nav {
+  border: none;
+  background: transparent;
+}
+
+/* 确保动画效果正常工作 */
+.use-motion .main-menu .menu-item {
+  visibility: visible;
+}
+
+/* 归档页面样式 */
+.page-archive .page-title,
+.page-archive .page-title-link {
+  display: inline-block;
+  position: relative;
+  color: var(--theme-color-blue);
+  border: none;
+  background: transparent;
+  margin-bottom: 1em;
+}
+
+.posts-collapse {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.posts-collapse::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+  border-radius: 8px;
+}
+
+/* 其他样式保持不变 */
+.posts-collapse .collection-title {
+  margin: 0;
+  position: relative;
+}
+
+.posts-collapse .collection-title h1,
+.posts-collapse .collection-title h2 {
+  color: var(--theme-color-blue);
+  margin: 1rem 0;
+}
+
+.posts-collapse .post-header {
+  position: relative;
+  margin: 1rem 0;
+}
+
+/* 文章内容区域 */
+.post-block {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 代码块和 markdown 内容透明度调整 */
+.highlight,
+.highlight table,
+.highlight .code pre,
+.highlight .gutter pre,
+.post-body .highlight,
+pre,
+code {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* markdown 内容区域透明度 */
+.post-body {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* 侧边栏 */
+.sidebar {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 页脚透明效果和文字颜色 */
+.footer,
+.footer-inner,
+.footer *,
+.footer-inner * {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.footer {
+  color: #000;
+}
+
+.footer .powered-by,
+.footer .powered-by a,
+.footer .copyright,
+.footer .copyright a {
+  color: #000;
+}
+
+/* 搜索框透明效果 */
+.search-popup {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 标签、分类、归档页面透明效果 */
+.tag-cloud,
+.category-all,
+.archive {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* 按钮透明效果 */
+.btn {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* 表格透明效果 */
+table {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* 引用块透明效果 */
+blockquote {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* 链接颜色 */
+.post-title-link {
+  color: var(--theme-color-blue);
+}
+
+.post-title-link:hover {
+  color: var(--theme-color-pink);
+}
+
+/* 标题颜色 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--theme-color-blue);
+}
+
+/* 分页器样式 */
+.pagination .page-number.current {
+  background: var(--theme-color-blue);
+  color: #fff;
+}
+
+.pagination .page-number:hover {
+  background: var(--theme-color-pink);
+  color: #fff;
+}
+
+/* 导航栏品牌区域 */
+.site-brand-container {
+  background: transparent;
+}
+
+.site-meta {
+  background: transparent;
+}
+
+.brand {
+  background: transparent;
+}
+
+/* 归档时间轴样式修复 */
+.posts-collapse::after {
+  background: var(--theme-color-blue);
+}
+
+.posts-collapse .post-header::before {
+  background: var(--theme-color-blue);
+}
+
+.posts-collapse .post-header:hover::before {
+  background: var(--theme-color-pink);
+}
+
+.posts-collapse .collection-title::before {
+  background: var(--theme-color-blue);
+}
+
+/* 行内代码样式 */
+code {
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+}
+
+/* 导航栏左上方修复 */
+.site-brand-wrapper {
+  background: transparent;
+}
+
+.site-nav-toggle,
+.site-nav-right {
+  background: transparent;
+}
+
+/* 归档页面标题修复 */
+.page-archive {
+  margin-top: 1em;
+}
+
+.page-archive .page-title {
+  margin: 0 0 1em 0;
+  padding: 0;
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+.archive-page-counter {
+  color: var(--theme-color-blue);
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+/* 归档页面内容区域 */
+.posts-collapse {
+  margin: 2em 0;
+}
+
+.posts-collapse .post-title a {
+  color: #333;
+}
+
+.posts-collapse .post-title a:hover {
+  color: var(--theme-color-pink);
+}
+
+/* 确保动画效果正常工作 */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+}

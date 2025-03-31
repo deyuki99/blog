@@ -1,0 +1,154 @@
+
+// Custom styles
+:root {
+  --theme-color-primary: #a8d8ff;
+  --theme-color-accent:rgb(255, 161, 175);
+}
+
+// Override theme colors
+.headband {
+  background: var(--theme-color-primary);
+}
+
+.site-meta {
+  background: var(--theme-color-primary);
+}
+
+.menu .menu-item a:hover {
+  background: var(--theme-color-accent);
+}
+
+.posts-expand .post-title-link::before {
+  background: var(--theme-color-primary);
+}
+
+.post-button .btn {
+  background: var(--theme-color-primary);
+  border-color: var(--theme-color-primary);
+  
+  &:hover {
+    background: var(--theme-color-accent);
+    border-color: var(--theme-color-accent);
+  }
+}
+
+.sidebar-nav li:hover {
+  color: var(--theme-color-accent);
+}
+
+// Custom styles for better visual hierarchy
+.post-block {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(168, 216, 255, 0.2);
+  }
+}
+
+.site-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Gradient background for header
+.header {
+  background: linear-gradient(135deg, var(--theme-color-primary) 0%, var(--theme-color-accent) 100%);
+}
+
+// Footer customization
+.footer {
+  .powered-by, .theme-info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    i {
+      margin: 0 5px;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  
+  .fa-hexo {
+    color: #0E83CD;
+  }
+  
+  .fa-gem {
+    color: #86B7E9;
+  }
+  
+  .footer-separator {
+    margin: 0 8px;
+  }
+}
+
+// Tags and Categories pages animations
+.tag-cloud-tags, .category-all {
+  a {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--theme-color-accent);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    &:hover::after {
+      width: 80%;
+    }
+  }
+}
+
+// Tag cloud animations
+.tag-cloud-tags {
+  a {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+      transform: translateY(-3px) rotate(2deg);
+    }
+  }
+}
+
+// Category list animations
+.category-all-item {
+  position: relative;
+  transition: all 0.3s ease;
+  
+  &::before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--theme-color-primary);
+  }
+  
+  &:hover {
+    padding-left: 10px;
+    
+    &::before {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  
+  .category-all-count {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+      background: var(--theme-color-accent);
+    }
+  }
+}
