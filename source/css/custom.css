@@ -1,3 +1,139 @@
+/* 头像样式 */
+.profile-avatar {
+  width: 400px !important;
+  height: 400px !important;
+  border-radius: 50% !important;
+  display: block !important;
+  margin: 0 auto !important;
+  object-fit: cover !important;
+}
+
+/* 全局圆角设置 */
+:root {
+  --border-radius: 20px;
+}
+
+/* 应用全局圆角到所有常用元素 */
+.post-block,
+.sidebar-inner,
+.comments,
+.pagination,
+.post-navigation-top,
+.sub-menu,
+.site-nav,
+.site-meta,
+.post-button .btn,
+.pagination .prev, 
+.pagination .next, 
+.pagination .page-number,
+.sidebar-toggle,
+.back-to-top,
+.tag-cloud,
+.category-all,
+.archive,
+blockquote,
+.note,
+table,
+img,
+code,
+pre,
+.highlight,
+.tabs,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea,
+button,
+.btn {
+  border-radius: var(--border-radius) !important;
+}
+
+/* 全局圆角设置 */
+:root {
+  --border-radius: 25px;
+}
+
+/* 应用全局圆角到所有元素 */
+.post-block,
+.sidebar-inner,
+.comments,
+.pagination,
+.post-navigation-top,
+.sub-menu,
+.site-nav,
+.site-meta,
+.post-button .btn,
+.pagination .prev, 
+.pagination .next, 
+.pagination .page-number,
+.sidebar-toggle,
+.back-to-top,
+.tag-cloud,
+.category-all,
+.archive,
+blockquote,
+.note,
+table,
+img,
+code,
+pre,
+.highlight,
+.tabs,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea,
+button,
+.btn,
+.posts-collapse,
+.main-inner.index.posts-expand,
+.main-inner.page.posts-expand,
+article.post-block,
+.menu-item a,
+.site-nav,
+.header,
+.search-popup,
+.sidebar,
+.post-gallery img,
+.post-card,
+.tag-cloud-item,
+.category-list-item,
+.links-of-author-item a,
+.site-state-item,
+.feed-link,
+.links-of-author-item img,
+.site-author-image,
+.site-overview,
+.post-copyright 
+{
+  border-radius: var(--border-radius) !important;
+  overflow: hidden;
+}
+
 /* 全局背景设置 */
 body {
   background: url('/images/bg.jpg') fixed;
@@ -173,7 +309,7 @@ body .main-menu.menu .menu-item:hover a {
   padding: 8px 15px;
   color: #333;
   font-size: 0.95em;
-  border-radius: 15px;
+  border-radius: var(--border-radius);
   transition: all 0.3s ease;
   background: transparent;
 }
@@ -308,7 +444,7 @@ body .main-menu.menu .menu-item:hover a {
   grid-column: 1;  /* 指定在第一列 */
   display: block;
   margin: 0;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
@@ -324,7 +460,7 @@ body .main-menu.menu .menu-item:hover a {
   font-size: 1.1em;
   color: #333;
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;

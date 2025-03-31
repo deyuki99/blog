@@ -1,7 +1,12 @@
 .site-author-image {
   border: $site-author-image-border-width solid $site-author-image-border-color;
-  max-width: $site-author-image-width;
+  width: 500px;
+  height: 500px;
   padding: 2px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
 
   if (hexo-config('avatar.rounded')) {
     border-radius: 50%;
