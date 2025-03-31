@@ -1,0 +1,10 @@
+
+<div class="daily-quote">
+  <div class="daily-quote-title">每日一句</div>
+  <div class="daily-quote-content">{{ theme.daily_quote.content or '生活不止眼前的苟且，还有诗和远方。' }}</div>
+  {% if theme.daily_quote.author %}
+    <div class="daily-quote-author">—— {{ theme.daily_quote.author }}</div>
+  {% else %}
+    <div class="daily-quote-author">—— 汪国真</div>
+  {% endif %}
+</div>
