@@ -13,6 +13,52 @@ body {
   --theme-color-pink: #ffb6c1;  /* 柔和粉 */
 }
 
+/* 导航菜单左对齐5*1布局 */
+body .site-nav {
+  padding: 8px 0;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+body .main-menu.menu {
+  margin: 0 0 0 20px !important;
+  padding: 5px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  width: 120px !important;
+  gap: 5px !important;
+}
+
+body .main-menu.menu .menu-item {
+  width: 100% !important;
+  text-align: left !important;
+  margin: 2px 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+body .main-menu.menu .menu-item a {
+  position: relative !important;
+  display: block !important;
+  padding: 6px 12px !important;
+  text-decoration: none !important;
+  margin-bottom: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+body .main-menu.menu .menu-item-active a {
+  color: var(--theme-color-blue) !important;
+  font-weight: bold !important;
+}
+
+body .main-menu.menu .menu-item:hover a {
+  color: var(--theme-color-blue) !important;
+  opacity: 0.8 !important;
+}
+
 /* 重新设计的 header 样式 */
 .header {
   position: relative;
@@ -470,32 +516,54 @@ a:hover {
   margin: 1rem 0;
 }
 
-/* 文章内容区域 */
-.post-block {
-  background: rgba(255, 255, 255, 0.6);
+/* 简化的文章块透明度设置 */
+article.post-block {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+article.post-block > *,
+.post-header,
+.post-body,
+.post-footer,
+.post-title,
+.post-meta,
+.post-content,
+.post-eof {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* 移除所有模糊效果 */
+article.post-block,
+article.post-block * {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 代码块特殊处理 */
+article.post-block .highlight * {
+  background: transparent !important;
+}
+
+/* 链接特殊处理 */
+article.post-block a {
+  background: transparent !important;
+}
+
+/* 确保文本可读性 */
+article.post-block {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* 主内容区域背景 */
+.main-inner.index.posts-expand {
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 20px;
 }
 
-/* 代码块和 markdown 内容透明度调整 */
-.highlight,
-.highlight table,
-.highlight .code pre,
-.highlight .gutter pre,
-.post-body .highlight,
-pre,
-code {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-
-/* markdown 内容区域透明度 */
-.post-body {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
+/* 移除旧的透明度相关样式 */
 
 /* 侧边栏 */
 .sidebar {
