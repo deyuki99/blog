@@ -1,27 +1,22 @@
 ---
-title: でゆき的博客
+title: Welcome | 欢迎 | ようこそ | 歡迎
 date: 2025-03-30
-lang: zh-CN
 ---
 
-# 欢迎来到でゆき的博客
+<script>
+var lang = navigator.language || navigator.userLanguage;
+lang = lang.toLowerCase();
 
-这里是でゆき的个人博客，我会在这里分享：
+var redirectMap = {
+  'zh-cn': '/zh-CN/',
+  'zh-tw': '/zh-TW/',
+  'ja': '/ja/',
+  'en': '/en/'
+};
 
-- 技术开发日志
-- 编程心得体会
-- 生活随想感悟
-- 个人创作作品
+var defaultLang = 'zh-CN';
+var targetPath = redirectMap[lang] || redirectMap[lang.split('-')[0]] || '/' + defaultLang + '/';
+window.location.href = targetPath;
+</script>
 
-## 关于我
-
-我是でゆき，一个生活在森林与城市边缘的狐狸药剂师。如果你想了解更多关于我的信息，欢迎访问[关于我](/about/)页面。
-
-## 联系方式
-
-如果你有任何问题或建议，欢迎与我交流。
-
----
-
-> 愿这里的文字能为你带来一些收获与思考。
-### 起始于：**2025-03-30**
+Redirecting... | 跳转中... | リダイレクト中... | 跳轉中...
