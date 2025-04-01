@@ -1,3 +1,4 @@
+
 {% extends '_layout.njk' %}
 {% import '_macro/post-collapse.njk' as post_template with context %}
 {% import '_macro/sidebar.njk' as sidebar_template with context %}
@@ -20,7 +21,7 @@
         </h1>
       </div>
 
-      {{ post_template.render(filter_posts_by_lang(page.posts)) }}
+      {{ post_template.render(page.posts) }}
     </div>
   </div>
   {##########################}

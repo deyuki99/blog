@@ -2,11 +2,15 @@
 'use strict';
 
 hexo.extend.helper.register('language_specific_categories', function(options = {}) {
-  const currentLang = this.page.lang || this.page.language || this.config.language;
+  const currentLang = this.page.lang || this.page.language || this.config.language[0];
+  const defaultLang = this.config.language[0];
   
   // 筛选具有相同语言的文章
   const posts = this.site.posts.filter(post => {
     const postLang = post.lang || post.language;
+    if (currentLang === defaultLang) {
+      return !postLang || postLang === currentLang;
+    }
     return postLang === currentLang;
   });
 
@@ -16,9 +20,12 @@ hexo.extend.helper.register('language_specific_categories', function(options = {
     if (post.categories) {
       post.categories.forEach(category => {
         if (!categories.has(category.name)) {
+          // 构建分类路径
+          const categoryPath = `categories/${category.name}`;
+          
           categories.set(category.name, {
             name: category.name,
-            path: this.url_for(this.config.category_dir + '/' + category.name),
+            path: this.custom_url_for(categoryPath),
             posts: [],
             length: 0
           });

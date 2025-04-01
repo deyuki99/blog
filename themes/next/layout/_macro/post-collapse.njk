@@ -7,7 +7,16 @@
   {%- if year !== current_year %}
     {%- set current_year = year %}
     <div class="collection-year">
-      <span class="collection-header">{{ current_year }}{% if is_archive() %}<span class="collection-year-count">{{ post_count(year) }}</span>{% endif %}</span>
+      <span class="collection-header">
+        {%- if not page.year %}
+          <a href="{{ custom_url_for('archives/' + year + '/') }}">{{ current_year }}</a>
+        {%- else %}
+          {{ current_year }}
+        {%- endif %}
+        {%- if is_archive() %}
+          <span class="collection-year-count">{{ post_count(year) }}</span>
+        {%- endif %}
+      </span>
     </div>
   {%- endif %}
 
@@ -27,7 +36,7 @@
           {%- set postText = post.title or post.link %}
           {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url'}) }}
         {% else %}
-          <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
+          <a class="post-title-link" href="{{ custom_url_for(post.path) }}" itemprop="url">
             <span itemprop="name">{{ post.title or __('post.untitled') }}</span>
           </a>
         {%- endif %}

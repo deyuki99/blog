@@ -2,7 +2,12 @@
 {% import '_macro/post-collapse.njk' as post_template with context %}
 {% import '_macro/sidebar.njk' as sidebar_template with context %}
 
-{% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
+{% block title %}
+  {%- if page.year %}
+    {{ page.year }} - 
+  {%- endif %}
+  {{ __('title.archive') }} | {{ title }}
+{% endblock %}
 
 {% block class %}archive posts-collapse{% endblock %}
 
@@ -14,24 +19,32 @@
   <div class="post-block">
     <div class="post-content">
       <div class="collection-title">
-        {%- set posts_length = count_posts_by_lang() %}
-        {%- if posts_length > 210 %}
-          {%- set cheers = 'excellent' %}
-        {% elif posts_length > 130 %}
-          {%- set cheers = 'great' %}
-        {% elif posts_length > 80 %}
-          {%- set cheers = 'good' %}
-        {% elif posts_length > 50 %}
-          {%- set cheers = 'nice' %}
-        {% elif posts_length > 30 %}
-          {%- set cheers = 'ok' %}
-        {% else %}
-          {%- set cheers = 'um' %}
+        {%- if not page.year %}
+          {%- set posts_length = count_posts_by_lang() %}
+          {%- if posts_length > 210 %}
+            {%- set cheers = 'excellent' %}
+          {% elif posts_length > 130 %}
+            {%- set cheers = 'great' %}
+          {% elif posts_length > 80 %}
+            {%- set cheers = 'good' %}
+          {% elif posts_length > 50 %}
+            {%- set cheers = 'nice' %}
+          {% elif posts_length > 30 %}
+            {%- set cheers = 'ok' %}
+          {% else %}
+            {%- set cheers = 'um' %}
+          {%- endif %}
+          <span class="collection-header">{{ __('cheers.' + cheers) }}! {{ _p('counter.archive_posts', posts_length) }} {{ __('keep_on') }}</span>
+        {%- else %}
+          <h1 class="collection-header">
+            {{- page.year }}
+            <small>{{ __('title.archive') }}</small>
+          </h1>
         {%- endif %}
-        <span class="collection-header">{{ __('cheers.' + cheers) }}! {{ _p('counter.archive_posts', posts_length) }} {{ __('keep_on') }}</span>
       </div>
 
-      {{ post_template.render(filter_posts_by_lang(page.posts)) }}
+      {%- set pagePosts = page.posts.sort('date', -1) %}
+      {{ post_template.render(pagePosts) }}
 
     </div>
   </div>
