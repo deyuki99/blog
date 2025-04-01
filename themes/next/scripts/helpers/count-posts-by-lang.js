@@ -2,6 +2,11 @@
 'use strict';
 
 hexo.extend.helper.register('count_posts_by_lang', function() {
+  // 只在归档页面进行语言过滤
+  if (!this.page.archive) {
+    return this.site.posts.length;
+  }
+
   const currentLang = this.page.lang || this.page.language || this.config.language[0];
   const defaultLang = this.config.language[0];
   
