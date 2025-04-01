@@ -20,7 +20,7 @@
         </h1>
       </div>
 
-      {{ post_template.render(page.posts) }}
+      {{ post_template.render(filter_posts_by_lang(page.posts)) }}
     </div>
   </div>
   {##########################}
