@@ -1,10 +1,6 @@
 
 ---
-<<<<<<< HEAD
 title: "Update Log: Multilingual Support and Interface Structure Optimization"
-=======
-title: Update Log: Multilingual Support and Interface Structure Optimization
->>>>>>> 936daaa (优化多语言支持，移除分类功能，修复标签页面URL，更改文章链接结构)
 date: 2025-04-01
 lang: en
 ---
