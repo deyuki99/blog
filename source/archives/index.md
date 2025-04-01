@@ -1,8 +1,8 @@
 
 ---
-title: 标签
+title: 归档
 date: 2025-03-31
-type: "tags"
+type: "archives"
 comments: false
 lang: zh-CN
 ---

@@ -1,8 +1,8 @@
 
 ---
-title: 分类
+title: Categories
 date: 2025-03-31
 type: "categories"
 comments: false
-lang: zh-CN
+lang: en
 ---

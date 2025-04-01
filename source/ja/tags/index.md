@@ -1,8 +1,8 @@
 
 ---
-title: 标签
+title: タグ
 date: 2025-03-31
 type: "tags"
 comments: false
-lang: zh-CN
+lang: ja
 ---
