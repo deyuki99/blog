@@ -1,6 +1,6 @@
 
 ---
-title: Update Log: Multilingual Support and Interface Structure Optimization
+title: "Update Log: Multilingual Support and Interface Structure Optimization"
 date: 2025-04-01
 lang: en
 ---
