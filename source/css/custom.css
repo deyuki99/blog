@@ -595,6 +595,7 @@ a:hover {
 .site-nav {
   border: none;
   background: transparent;
+  position: relative;
 }
 
 /* 确保动画效果正常工作 */
@@ -890,4 +891,106 @@ code {
 
 .fadeInDown {
   animation-name: fadeInDown;
+}
+
+/* 固定位置的语言切换组件样式 */
+.language-switcher-fixed {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.language-switcher-fixed .languages {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.language-switcher-fixed .languages:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.language-switcher-fixed .lang-select-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.language-switcher-fixed .lang-select {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+/* 移动端适配 */
+@media (max-width: 767px) {
+  .language-switcher-fixed {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+.language-switcher .languages {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-switcher .lang-select-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.language-switcher .lang-select {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.main-menu.menu {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* 移动端适配 */
+@media (max-width: 767px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  
+  .language-switcher {
+    margin: 10px 0;
+    align-self: center;
+  }
+  
+  .main-menu.menu {
+    width: 100%;
+  }
 }

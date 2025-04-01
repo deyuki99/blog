@@ -18,6 +18,11 @@
 
 <body itemscope itemtype="http://schema.org/WebPage"{% if theme.motion.enable %} class="use-motion"{% endif %}>
   <div class="headband"></div>
+  {%- if theme.language_switcher %}
+    <div class="language-switcher-fixed">
+      {{ partial('_partials/languages.njk') }}
+    </div>
+  {%- endif %}
 
   <main class="main">
     <div class="column">
@@ -42,7 +47,6 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      {%- include '_partials/languages.njk' -%}
       {{ partial('_partials/footer.njk', {}, {cache: theme.cache.enable}) }}
     </div>
   </footer>

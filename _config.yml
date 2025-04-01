@@ -8,7 +8,11 @@ subtitle: '技术与生活的分享'
 description: '一个关于技术、生活和随想的个人博客'
 keywords: 技术, 博客, 编程, 生活
 author: でゆき
-language: zh-CN
+language:
+- zh-CN
+- zh-TW
+- en
+- ja
 timezone: 'Asia/Shanghai'
 
 # URL
