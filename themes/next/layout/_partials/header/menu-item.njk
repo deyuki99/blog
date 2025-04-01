@@ -21,7 +21,8 @@
       {%- endfor %}
     {%- endif %}
 
-    {{- next_url(itemURL, menuIcon + menuText + menuBadge, {rel: 'section'}) -}}
+    {%- set url = custom_url_for(itemURL) -%}
+    <a href="{{ url }}" rel="section">{{ menuIcon + menuText + menuBadge | safe }}</a>
 
   </li>
 
