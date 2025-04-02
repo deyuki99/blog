@@ -305,7 +305,12 @@ NexT.utils = {
           span.innerText = target.text;
         });
         // Disable Pjax to force refresh translation of menu item
-        window.location.href = target.dataset.href;
+        let href = target.dataset.href;
+        // 确保简体中文链接正确
+        if (target.value === 'zh-CN' && !href.endsWith('/')) {
+          href += '/';
+        }
+        window.location.href = href;
       });
     });
   },

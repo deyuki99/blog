@@ -7,9 +7,15 @@
     </label>
     <select class="lang-select" data-canonical="" aria-label="{{ __('accessibility.select_lang') }}">
       {% for language in languages %}
-        <option value="{{ language }}" data-href="{{ i18n_path(language) }}" selected="">
-          {{ language_name(language) }}
-        </option>
+        {% if language === 'zh-CN' %}
+          <option value="{{ language }}" data-href="/{{ language }}/" {% if page.lang === language %}selected{% endif %}>
+            {{ language_name(language) }}
+          </option>
+        {% else %}
+          <option value="{{ language }}" data-href="{{ i18n_path(language) }}" {% if page.lang === language %}selected{% endif %}>
+            {{ language_name(language) }}
+          </option>
+        {% endif %}
       {% endfor %}
     </select>
   </div>
