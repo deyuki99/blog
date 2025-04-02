@@ -1052,3 +1052,9 @@ code {
   .main-menu.menu {
     width: 100%;
   }
+
+  /* 在移动端隐藏音乐播放器 */
+  .music-player {
+    display: none !important;
+  }
+}
