@@ -977,6 +977,65 @@ code {
   justify-content: flex-end;
 }
 
+/* 移动端菜单按钮样式 */
+@media (max-width: 767px) {
+  /* 设置三条横线的基本样式，不受父元素class影响 */
+  body .toggle .toggle-line,
+  .use-motion .toggle .toggle-line,
+  .use-motion.site-nav-on .toggle .toggle-line {
+    background: var(--theme-color-blue) !important;
+    height: 2px !important;
+    left: 0 !important;
+    margin-top: 4px !important;
+    position: relative !important;
+    top: 0 !important;
+    transition: all .4s !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+
+  /* 确保第一条线的间距正确 */
+  body .toggle .toggle-line:first-child,
+  .use-motion .toggle .toggle-line:first-child,
+  .use-motion.site-nav-on .toggle .toggle-line:first-child {
+    margin-top: 0 !important;
+  }
+
+  /* 设置三条横线的间距 */
+  body .toggle .toggle-line:not(:first-child),
+  .use-motion .toggle .toggle-line:not(:first-child),
+  .use-motion.site-nav-on .toggle .toggle-line:not(:first-child) {
+    margin-top: 6px !important;
+  }
+
+  /* 强制显示所有状态下的样式 */
+  body .toggle,
+  .use-motion .toggle,
+  .use-motion.site-nav-on .toggle {
+    transform: none !important;
+  }
+
+  body .toggle .toggle-line,
+  .use-motion .toggle .toggle-line,
+  .use-motion.site-nav-on .toggle .toggle-line {
+    opacity: 1 !important;
+  }
+
+  /* 确保所有状态下的hover效果一致 */
+  body .sidebar-toggle:hover .toggle-line,
+  .use-motion .sidebar-toggle:hover .toggle-line,
+  .use-motion.site-nav-on .sidebar-toggle:hover .toggle-line {
+    background: var(--theme-color-blue) !important;
+  }
+
+  /* 确保toggle-close状态下的样式一致 */
+  body .toggle.toggle-close .toggle-line,
+  .use-motion .toggle.toggle-close .toggle-line,
+  .use-motion.site-nav-on .toggle.toggle-close .toggle-line {
+    background: var(--theme-color-blue) !important;
+  }
+}
+
 /* 移动端适配 */
 @media (max-width: 767px) {
   .site-nav {
@@ -993,4 +1052,3 @@ code {
   .main-menu.menu {
     width: 100%;
   }
-}
