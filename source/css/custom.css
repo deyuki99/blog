@@ -1,11 +1,25 @@
 /* 头像样式 */
 .profile-avatar {
-  width: 400px !important;
-  height: 400px !important;
+  width: 30vw !important; /* 使用视窗宽度的30%作为基准 */
+  height: 30vw !important; /* 保持1:1的宽高比 */
+  max-width: 400px !important; /* 设置最大宽度 */
+  max-height: 400px !important; /* 设置最大高度 */
+  min-width: 200px !important; /* 设置最小宽度 */
+  min-height: 200px !important; /* 设置最小高度 */
   border-radius: 50% !important;
   display: block !important;
   margin: 0 auto !important;
   object-fit: cover !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 767px) {
+  .profile-avatar {
+    width: 60vw !important; /* 在移动端使用更大的比例 */
+    height: 60vw !important;
+    min-width: 150px !important; /* 移动端的最小尺寸 */
+    min-height: 150px !important;
+  }
 }
 
 /* 全局圆角设置 */
