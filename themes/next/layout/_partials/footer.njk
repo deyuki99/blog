@@ -22,6 +22,15 @@
   </div>
 {%- endif %}
 
+<div class="visit-count">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span title="总访问次数">总访问次数: {{ visit_count }}</span>
+  </span>
+</div>
+
 {%- if config.symbols_count_time.total_symbols or config.symbols_count_time.total_time %}
 <div class="wordcount">
   {%- if config.symbols_count_time.total_symbols %}
