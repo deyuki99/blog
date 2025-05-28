@@ -1,18 +1,19 @@
 ---
 title: 关于でゆき
-date: 2024-01-08
 type: "about"
 ---
 
 <link rel="stylesheet" href="/css/custom.css">
 
 <div style="text-align: center;">
-    <img src="../images/oc.jpg" alt="でゆき" class="profile-avatar">
+    <a href="https://github.com/deyuki99" target="_blank">
+        <img src="../images/oc.jpg" alt="でゆき" class="profile-avatar">
+    </a>
 </div>
 
 # 关于でゆき
 
-## 基本信息
+## 基本情報
 
 - **姓名：** でゆき
 - **性别：** 女
